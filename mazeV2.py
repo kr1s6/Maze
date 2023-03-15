@@ -1,5 +1,4 @@
 import random
-
 import maze_module as mm
 
 
