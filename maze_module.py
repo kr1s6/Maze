@@ -27,7 +27,7 @@ def make_paths(r, c, door):
     return paths
 
 
-#finding one block before exit, later to use for higher possibility to find road to exit
+#finding one block before exit to use for higher possibility to find road to exit
 def exit_ex(r, c, door):
     x, y = door
     door_ex = list()
