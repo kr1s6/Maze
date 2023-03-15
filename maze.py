@@ -122,7 +122,7 @@ with open("maze.txt", 'w') as maze:
             elif exit is True:  # making inside the labyrinth when is "exit"
                 if (i == save_exit_w) or ((save_exit_w == 0) and (i == save_exit_w + 1)) \
                         or ((save_exit_w == (w-1)) and (i == save_exit_w - 1)):
-                    r = random.choice("WXXXXXXXXXXXXXXXXXXX")
+                    r = random.choice("WXXXXXXXXXXXXXXXXXXX")  # 5% szans
                     maze.write(r)
                 elif (j == save_exit_k) or ((save_exit_k == 0) and j == (save_exit_k + 1)) \
                         or (save_exit_k == (k-1) and j == (save_exit_k - 1)):

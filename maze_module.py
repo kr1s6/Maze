@@ -11,6 +11,7 @@ def exit(r, c):
     return exit_r, exit_c
 
 
+####################################
 #making borders of the labyrinth
 def borders(r, c, door):
     bounds = set()
@@ -22,3 +23,33 @@ def borders(r, c, door):
         bounds.add((r-1, j))
     bounds.remove(door)
     return bounds
+
+
+###############################################################
+#making paths inside maze
+def make_paths(r, c, door):
+    x, y = exit_ex(r, c, door)
+    paths = set()
+    for i in range(1, r-2):
+        for j in range(1, c-2):
+            if i == x or j == y:
+                if random.random() <= 0.95:
+                    paths.add((i, j))
+            else:
+                if random.random() <= 0.05:
+                    paths.add((i, j))
+
+
+#finding one block before exit, later to use for higher possibility to find road to exit
+def exit_ex(r, c, door):
+    x, y = door
+    door_ex = tuple()
+    if x == 0:
+        door_ex = (x + 1, y)
+    elif x == (r - 1):
+        door_ex = (x - 1, y)
+    elif y == 0:
+        door_ex = (x, y + 1)
+    elif y == (c - 1):
+        door_ex = (x, y - 1)
+    return door_ex
