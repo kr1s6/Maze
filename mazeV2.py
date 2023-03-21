@@ -10,17 +10,23 @@ if __name__ == '__main__':
         exit = mm.exit_from_maze(r, c)
         paths = mm.make_paths(r, c, exit)
         start = random.choice(paths)
-        road = mm.road_to_exit(r, c, paths, start, exit)
+
+        roads = dict()
+        count = 1
+        roads[start] = count
+        mm.road_to_exit(paths, start, exit, roads, count)
         print(f"exit = {exit}")
         print(f"Start = {start}")
+        print(f"Road:\n {roads}")
 
         tab = []
         for i in range(r):
             tab.append([])
             for j in range(c):
-                if (i, j) == start:
-                    tab[i].append(1)
-                elif (i, j) in paths:
+                if (i, j) in roads:
+                    tab[i].append('D')
+                    # tab[i].append(roads.get((i, j)))
+                elif (i, j) in paths and (i, j) not in roads:
                     tab[i].append('_')
                 else:
                     tab[i].append('W')

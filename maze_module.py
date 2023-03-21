@@ -45,5 +45,27 @@ def exit_ex(r, c, exit):
 
 ##############################################################################
 #searching for road to exit
-def road_to_exit(r, c, paths, start, exit):
-    pass
+def road_to_exit(paths, point, exit, roads, count):
+    if point == exit:
+        print("EXIT")
+        return True
+    x, y = point
+    for m, n in [(x, y - 1), (x - 1, y), (x, y + 1), (x + 1, y)]:
+        if (m, n) in paths:
+            if (m, n) in roads.keys():
+                if roads[(m, n)] < count:
+                    continue
+                elif roads[(m, n)] > count + 1:
+                    roads[(m, n)] = count + 1
+                else:
+                    continue
+            else:
+                roads[(m, n)] = count + 1
+
+    for m, n in [(x, y - 1), (x - 1, y), (x, y + 1), (x + 1, y)]:
+        if (m, n) in roads.keys():
+            if roads[(m, n)] == count + 1:
+                roads = road_to_exit(paths, (m, n), exit, roads, count + 1)
+                if roads is True:
+                    break
+    return roads
