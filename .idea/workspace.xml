@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ff17792e-5bf0-4089-a9f8-1823919087dd" name="Changes" comment="plik maze.py" />
+    <list default="true" id="ff17792e-5bf0-4089-a9f8-1823919087dd" name="Changes" comment="plik maze.py">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mazeV2.py" beforeDir="false" afterPath="$PROJECT_DIR$/mazeV2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maze_module.py" beforeDir="false" afterPath="$PROJECT_DIR$/maze_module.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -141,5 +145,21 @@
     <MESSAGE value="literówka" />
     <MESSAGE value="plik maze.py" />
     <option name="LAST_COMMIT_MESSAGE" value="plik maze.py" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/maze.py</url>
+          <line>99</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/maze.py</url>
+          <line>52</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

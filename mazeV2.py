@@ -7,10 +7,10 @@ if __name__ == '__main__':
     c = int(input("How many columns? : "))
 
     with open("maze.txt", 'w') as maze:
-        exit = mm.exit(r, c)
+        exit = mm.exit_from_maze(r, c)
         paths = mm.make_paths(r, c, exit)
-        paths.append(exit)
         start = random.choice(paths)
+        road = mm.road_to_exit(r, c, paths, start, exit)
         print(f"exit = {exit}")
         print(f"Start = {start}")
 
