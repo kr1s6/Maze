@@ -52,20 +52,23 @@ def road_to_exit(paths, point, exit, roads, count):
     x, y = point
     for m, n in [(x, y - 1), (x - 1, y), (x, y + 1), (x + 1, y)]:
         if (m, n) in paths:
-            if (m, n) in roads.keys():
-                if roads[(m, n)] < count:
+            try:
+                if roads[(m, n)] <= count:
                     continue
                 elif roads[(m, n)] > count + 1:
                     roads[(m, n)] = count + 1
-                else:
-                    continue
-            else:
+            except KeyError:
                 roads[(m, n)] = count + 1
+                if (m, n) == exit:
+                    print("EXIT")
+                    return True
 
     for m, n in [(x, y - 1), (x - 1, y), (x, y + 1), (x + 1, y)]:
-        if (m, n) in roads.keys():
+        try:
             if roads[(m, n)] == count + 1:
                 roads = road_to_exit(paths, (m, n), exit, roads, count + 1)
                 if roads is True:
                     break
+        except KeyError:
+            continue
     return roads

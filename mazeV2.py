@@ -17,15 +17,15 @@ if __name__ == '__main__':
         mm.road_to_exit(paths, start, exit, roads, count)
         print(f"exit = {exit}")
         print(f"Start = {start}")
-        print(f"Road:\n {roads}")
+        print(roads)
 
         tab = []
         for i in range(r):
             tab.append([])
             for j in range(c):
                 if (i, j) in roads:
-                    tab[i].append('D')
-                    # tab[i].append(roads.get((i, j)))
+                    # tab[i].append('D')
+                    tab[i].append(roads.get((i, j)))
                 elif (i, j) in paths and (i, j) not in roads:
                     tab[i].append('_')
                 else:
