@@ -15,10 +15,32 @@ if __name__ == '__main__':
         count = 1
         roads[start] = count
         mm.road_to_exit(paths, start, exit, roads, count)
-        if exit in roads:
-            mm.path(roads, exit, start)
         print(f"exit = {exit}")
         print(f"Start = {start}")
+        # tabb = []
+        # for i in range(r):
+        #     tabb.append([])
+        #     for j in range(c):
+        #         if (i, j) in roads:
+        #             if type(roads[(i, j)]) == int:
+        #                 if roads[(i, j)] > 9:
+        #                     tabb[i].append('*')
+        #                 else:
+        #                     tabb[i].append(roads.get((i, j)))
+        #             else:
+        #                 tabb[i].append(roads.get((i, j)))
+        #         elif (i, j) in paths and (i, j) not in roads:
+        #             tabb[i].append('_')
+        #         else:
+        #             tabb[i].append('W')
+        # for i in range(r):
+        #     print(*tabb[i])
+
+        if exit in roads:
+            print("EXIT")
+            mm.path(roads, exit, start)
+        else:
+            print("There isn't path to the exit :c")
 
         tab = []
         for i in range(r):
@@ -26,7 +48,10 @@ if __name__ == '__main__':
             for j in range(c):
                 if (i, j) in roads:
                     if type(roads[(i, j)]) == int:
-                        tab[i].append('*')
+                        if roads[(i, j)] > 9:
+                            tab[i].append('_')
+                        else:
+                            tab[i].append(roads.get((i, j)))
                     else:
                         tab[i].append(roads.get((i, j)))
                 elif (i, j) in paths and (i, j) not in roads:
