@@ -72,3 +72,24 @@ def road_to_exit(paths, point, exit, roads, count):
         except KeyError:
             continue
     return roads
+
+
+#######################################################################
+#making the shortest path to exit with 'D'
+def path(roads, exit, start):
+    if exit == start:
+        roads[exit] = 'S'
+        return roads
+    x, y = exit
+    minimum = roads[exit]
+    for m, n in [(x, y - 1), (x - 1, y), (x, y + 1), (x + 1, y)]:
+        try:
+            if roads[(m, n)] < minimum:
+                minimum = (m, n)
+        except KeyError:
+            continue
+        except TypeError:
+            continue
+    roads[exit] = 'D'
+    path(roads, minimum, start)
+    return roads
