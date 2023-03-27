@@ -50,16 +50,19 @@ def road_to_exit(paths, point, exit, roads, count):
         return roads
     x, y = point
     for m, n in [(x, y - 1), (x - 1, y), (x, y + 1), (x + 1, y)]:
-        if (m, n) in paths:
-            try:
-                if roads[(m, n)] <= count:
-                    continue
-                elif roads[(m, n)] > count + 1:
+        try:
+            if paths.index((m, n)):
+                try:
+                    if roads[(m, n)] <= count:
+                        continue
+                    elif roads[(m, n)] > count + 1:
+                        roads[(m, n)] = count + 1
+                except KeyError:
                     roads[(m, n)] = count + 1
-            except KeyError:
-                roads[(m, n)] = count + 1
-                if (m, n) == exit:
-                    return roads
+                    if (m, n) == exit:
+                        return roads
+        except ValueError:
+            continue
 
     for m, n in [(x, y - 1), (x - 1, y), (x, y + 1), (x + 1, y)]:
         try:
@@ -71,7 +74,7 @@ def road_to_exit(paths, point, exit, roads, count):
 
 
 #######################################################################
-#making the shortest path to exit with 'D'
+#making the shortest path to exit with 'D' from exit to start
 def path(roads, exit, start):
     if exit == start:
         roads[exit] = 'S'
