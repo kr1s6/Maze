@@ -1,5 +1,5 @@
 # Maze
- Labyrinth/Maze with automatic search for shortest exit.
+ Labyrinth/Maze with automatic search for exit.
  
 Program generates maze
 and sets random start place from which it begins to 
