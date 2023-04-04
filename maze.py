@@ -44,25 +44,3 @@ if __name__ == '__main__':
                 tab[i].append('W')
     for i in range(r):
         print(*tab[i])
-
-        # tab = []
-        # for i in range(r):
-        #     tab.append([])
-        #     for j in range(c):
-        #         try:
-        #             if roads.get((i, j)):
-        #                 if type(roads[(i, j)]) == int:
-        #                     if roads[(i, j)] > 9:
-        #                         tab[i].append('_')
-        #                     else:
-        #                         tab[i].append(roads.get((i, j)))
-        #                 else:
-        #                     tab[i].append(roads.get((i, j)))
-        #             elif paths.index((i, j)):
-        #                 tab[i].append('_')
-        #             else:
-        #                 tab[i].append('W')
-        #         except ValueError:
-        #             tab[i].append('W')
-        # for i in range(r):
-        #     print(*tab[i])
