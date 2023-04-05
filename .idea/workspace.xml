@@ -29,7 +29,7 @@
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
         <option name="accountId" value="ecb602ca-f399-44f7-9e05-b14ac47200f5" />
-        <option name="url" value="https://github.com/kr1s6/MazeV2.git" />
+        <option name="url" value="https://github.com/kr1s6/Maze.git" />
       </UrlAndAccount>
     </option>
   </component>
@@ -178,7 +178,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679942123696</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="improvement">
+      <created>1680639625174</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1680639625174</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
